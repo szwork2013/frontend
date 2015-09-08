@@ -1,1 +1,1 @@
-json-server data.js -p3001
+json-server mockData.js -p3001

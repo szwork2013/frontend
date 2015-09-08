@@ -2,11 +2,13 @@ module frontend {
   'use strict';
 
   /** @ngInject */
-  export function cartNavbar(): ng.IDirective {
+  export function acmeNavbar(): ng.IDirective {
 
     return {
       restrict: 'E',
-      scope: {},
+      scope: {
+        creationDate: '='
+      },
       templateUrl: 'app/components/navbar/navbar.html',
       controller: NavbarController,
       controllerAs: 'vm',
@@ -19,8 +21,9 @@ module frontend {
   class NavbarController {
     public relativeDate: string;
 
-    constructor(toastr: Toastr) {
-      toastr.success('activated cart navbar directive');
+    constructor(moment: moment.MomentStatic) {
+      /* jshint vaidthis:true */
+      this.relativeDate = moment(1441611303308).fromNow();
     }
   }
 }

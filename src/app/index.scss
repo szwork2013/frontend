@@ -4,14 +4,18 @@
  */
 
 $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-@import '../../bower_components/bootswatch-scss/superhero/variables';
+$fa-font-path: "../../bower_components/fontawesome/fonts";
+@import "../../bower_components/fontawesome/scss/font-awesome.scss";
+@import '../../bower_components/bootswatch-scss/yeti/variables';
+
 /**
  *  Do not remove this comments bellow. It's the markers used by wiredep to inject
  *  sass dependencies when defined in the bower.json of your dependencies
  */
 // bower:scss
 // endbower
-@import '../../bower_components/bootswatch-scss/superhero/bootswatch';
+
+@import '../../bower_components/bootswatch-scss/yeti/bootswatch';
 
 .browsehappy {
   margin: 0.2em 0;
@@ -20,12 +24,41 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
   padding: 0.2em 0;
 }
 
-.thumbnail {
-  height: 200px;
-
-  img.pull-right {
-    width: 50px;
+body {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  font-weight: 400;
+}
+//custom animation
+@-webkit-keyframes customSlideInUp {
+  0% {
+    -webkit-transform: translate3d(0, 10%, 0);
+    transform: translate3d(0, 10%, 0);
+    visibility: visible;
   }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes customSlideInUp {
+  0% {
+    -webkit-transform: translate3d(0, 10%, 0);
+    transform: translate3d(0, 10%, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.customSlideInUp {
+  -webkit-animation-name: customSlideInUp;
+  animation-name: customSlideInUp;
 }
 
 /**

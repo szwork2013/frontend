@@ -6,7 +6,6 @@
 /// <reference path="index.config.ts" />
 /// <reference path="index.run.ts" />
 /// <reference path="main/main.controller.ts" />
-/// <reference path="../app/components/carousel/carousel.directive.ts" />
 /// <reference path="../app/components/navbar/navbar.directive.ts" />
 /// <reference path="../app/components/malarkey/malarkey.directive.ts" />
 /// <reference path="../app/components/webDevTec/webDevTec.service.ts" />
@@ -32,6 +31,5 @@ module frontend {
     .service('webDevTec', WebDevTecService)
     .controller('MainController', MainController)
     .directive('cartNavbar', cartNavbar)
-    .directive('cartCarousel', cartCarousel)
     .directive('acmeMalarkey', acmeMalarkey);
 }

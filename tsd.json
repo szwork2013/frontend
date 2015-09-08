@@ -25,6 +25,9 @@
     },
     "moment/moment-node.d.ts": {
       "commit": "bb051830df88f5a55dcf06b7fe85bf6b62cc97f2"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "a30103191d2e47836402ace83744424f8ce36815"
     }
   }
 }

@@ -1,3 +1,6 @@
-.acme-navbar-text{
-  color: white;
+li.dropdown {
+  &.open > ul {
+    -webkit-animation: customSlideInUp .5s;
+    animation: customSlideInUp .5s;
+  }
 }
