@@ -22,10 +22,10 @@ module frontend {
 
   /** @ngInject */
   class CarouselController {
-    public myInterval: Number;
-    public slides: ISlide[];
+    private myInterval: Number;
+    private slides: ISlide[];
     constructor(toastr: Toastr) {
-      this.myInterval = 5000;
+      this.myInterval = 3000;
       this.slides = [];
       // call this function when controller is first loaded
       this.activate(toastr);
@@ -46,7 +46,7 @@ module frontend {
      * add slide function called on page load to activate carousel with four slides
      */
     addSlide() {
-      var newWidth: Number = 1200 + this.slides.length + 4;
+      var newWidth: Number = 1200 + this.slides.length + 1;
       this.slides.push({
         image: '//placekitten.com/' + newWidth + '/500',
         text: ['More', 'Extra', 'Lots of', 'Surplus'][this.slides.length % 4] + ' ' +

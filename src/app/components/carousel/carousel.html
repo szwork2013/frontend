@@ -1,6 +1,6 @@
 <div class="container">
   <div style="height: 400px;">
-    <carousel interval="myInterval" no-wrap="noWrapSlides">
+    <carousel interval="vm.myInterval" no-wrap="noWrapSlides">
       <slide ng-repeat="slide in vm.slides" active="slide.active">
         <img ng-src="{{::slide.image}}" style="margin:auto;">
         <div class="carousel-caption">

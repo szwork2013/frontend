@@ -8,6 +8,7 @@
 /// <reference path="main/main.controller.ts" />
 /// <reference path="../app/components/carousel/carousel.directive.ts" />
 /// <reference path="../app/components/navbar/navbar.directive.ts" />
+/// <reference path="../app/components/singleProduct/singleProduct.directive.ts" />
 /// <reference path="../app/components/malarkey/malarkey.directive.ts" />
 /// <reference path="../app/components/webDevTec/webDevTec.service.ts" />
 /// <reference path="../app/components/githubContributor/githubContributor.service.ts" />
@@ -33,5 +34,6 @@ module frontend {
     .controller('MainController', MainController)
     .directive('cartNavbar', cartNavbar)
     .directive('cartCarousel', cartCarousel)
+    .directive('cartSingleProduct', cartSingleProduct)
     .directive('acmeMalarkey', acmeMalarkey);
 }
