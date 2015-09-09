@@ -24,6 +24,7 @@ module frontend {
   class CarouselController {
     private myInterval: Number;
     private slides: ISlide[];
+
     constructor(toastr: Toastr) {
       this.myInterval = 3000;
       this.slides = [];
@@ -48,7 +49,7 @@ module frontend {
     addSlide() {
       var newWidth: Number = 1200 + this.slides.length + 1;
       this.slides.push({
-        image: '//placekitten.com/' + newWidth + '/500',
+        image: '//placekitten.com/' + newWidth + '/400',
         text: ['More', 'Extra', 'Lots of', 'Surplus'][this.slides.length % 4] + ' ' +
         ['Cats', 'Kittys', 'Felines', 'Cutes'][this.slides.length % 4]
       });

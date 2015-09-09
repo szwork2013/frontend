@@ -1,13 +1,46 @@
-<cart-navbar></cart-navbar>
-<!--<cart-carousel></cart-carousel>-->
-<div class="clearfix"></div>
+<cart-carousel></cart-carousel>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <cart-single-product></cart-single-product>
-      <cart-single-product></cart-single-product>
-      <cart-single-product></cart-single-product>
-      <cart-single-product></cart-single-product>
+    <div class="col-sm-3">
+      <div class="left-sidebar">
+        <h2>Category</h2>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <i class="fa fa-plus pull-right"></i>
+          Mobile & Tablets
+        </li>
+        <li class="list-group-item">
+          <i class="fa fa-plus pull-right"></i>
+          Computers, Office & Gaming
+        </li>
+        <li class="list-group-item">
+          <i class="fa fa-plus pull-right"></i>
+          Home & Kitchen
+        </li>
+        <li class="list-group-item">
+          <i class="fa fa-plus pull-right"></i>
+          Women's Fashin
+        </li>
+        <li class="list-group-item">
+          <i class="fa fa-plus pull-right"></i>
+          Men's Fashion
+        </li>
+        <li class="list-group-item">
+          <i class="fa fa-plus pull-right"></i>
+          Toys, Kids & Babies
+        </li>
+        <li class="list-group-item">
+          <i class="fa fa-plus pull-right"></i>
+          Sports & Fitness
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-9" style="padding-right: 0">
+      <div class="col-xs-12" style="padding-right: 0">
+        <h2 class="title text-center">Features Items</h2>
+      </div>
+      <cart-single-product count="5" category="Electronics"></cart-single-product>
     </div>
   </div>
 </div>

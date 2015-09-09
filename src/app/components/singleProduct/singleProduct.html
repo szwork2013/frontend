@@ -1,29 +1,32 @@
-<div class="col-sm-3">
+<div class="col-xs-12 col-sm-4" ng-repeat="product in vm.products">
   <div class="product-image-wrapper">
     <div class="single-products">
       <div class="productinfo text-center">
-        <img src="../assets/images/product-1.jpg" alt="">
-        <h2>$56</h2>
-        <p>Easy Polo Black Edition</p>
-        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+        <img ng-src="{{product.images[0].url.http}}" alt="" style="height: 261px;">
+        <h2>{{::product.pricing.formatted.with_tax}}</h2>
+        <p>{{::product.title}}</p>
+        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</a>
       </div>
       <div class="product-overlay">
         <div class="overlay-content">
-          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-          <h2>$56</h2>
+          <span>{{::product.description}}</span>
+          <h2>{{::product.pricing.formatted.with_tax}}</h2>
           <p>Easy Polo Black Edition</p>
-          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</a>
         </div>
       </div>
-      <img src="../assets/images/new.png" class="new" alt="">
+      <img src="../assets/images/sale.png" class="new" alt="">
     </div>
     <div>
       <div class="btn-group btn-group-justified" role="group" aria-label="...">
         <div class="btn-group" role="group">
-          <button type="button" class="btn btn-primary"> <i class="fa fa-bar-chart"></i> Compare</button>
+          <button type="button" class="btn btn-primary btn-sm"> <i class="fa fa-bar-chart"></i> </button>
         </div>
         <div class="btn-group" role="group">
-          <button type="button" class="btn btn-primary"> <i class="fa fa-bookmark"></i> Bookmark</button>
+          <button type="button" class="btn btn-primary btn-sm"> <i class="fa fa-bookmark"></i> </button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-primary btn-sm"> <i class="fa fa-search"></i> </button>
         </div>
       </div>
     </div>
