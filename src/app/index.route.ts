@@ -12,10 +12,22 @@ module frontend {
           controllerAs: 'main'
         })
         .state('productDetail', {
-          url: '/:id',
+          url: '/detail/:id',
           templateUrl: 'app/productDetail/productDetail.html',
           controller: 'ProductDetailController',
           controllerAs: 'detail'
+        })
+        .state('checkout', {
+          url: '/checkout',
+          templateUrl: 'app/checkout/checkout.html',
+          controller: 'CheckoutController',
+          controllerAs: 'checkout'
+        })
+        .state('cart', {
+          url: '/cart',
+          templateUrl: 'app/cart/cart.html',
+          controller: 'CartController',
+          controllerAs: 'cart'
         });
 
       $urlRouterProvider.otherwise('/');

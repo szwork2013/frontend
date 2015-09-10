@@ -7,8 +7,11 @@
 /// <reference path="index.run.ts" />
 /// <reference path="main/main.controller.ts" />
 /// <reference path="productDetail/productDetail.controller.ts" />
+/// <reference path="checkout/checkout.controller.ts" />
+/// <reference path="cart/cart.controller.ts" />
 /// <reference path="../app/components/carousel/carousel.directive.ts" />
 /// <reference path="../app/components/navbar/navbar.directive.ts" />
+/// <reference path="../app/components/footer/footer.directive.ts" />
 /// <reference path="../app/components/singleProduct/singleProduct.directive.ts" />
 /// <reference path="../app/components/malarkey/malarkey.directive.ts" />
 /// <reference path="../app/components/webDevTec/webDevTec.service.ts" />
@@ -38,7 +41,10 @@ module frontend {
     .service('dataService', DataService)
     .controller('MainController', MainController)
     .controller('ProductDetailController', ProductDetailController)
+    .controller('CheckoutController', CheckoutController)
+    .controller('CartController', CartController)
     .directive('cartNavbar', cartNavbar)
+    .directive('cartFooter', cartFooter)
     .directive('cartCarousel', cartCarousel)
     .directive('cartSingleProduct', cartSingleProduct)
     .directive('acmeMalarkey', acmeMalarkey);
