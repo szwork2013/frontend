@@ -23,6 +23,7 @@ install:
 before_script:
   - gem install sass
   - npm install -g bower
+  - npm install gulp
   - npm install -g gulp
 
 script:
