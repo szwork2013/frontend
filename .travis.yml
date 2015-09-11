@@ -1,11 +1,27 @@
 language: node_js
+sudo: false
 node_js:
-  - '0.10'
   - '0.11'
   - '0.12'
-    - iojs
+  - iojs
+
+cache:
+  directories:
+    - node_modules
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - node_js: iojs
+
+install:
+  # Disable the spinner, it looks bad on Travis
+  - npm install
+
 before_script:
   - npm install
+  - npm install bower -g
+  - bower install
 
 script:
   - npm test
