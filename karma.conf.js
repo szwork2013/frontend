@@ -42,11 +42,24 @@ module.exports = function(config) {
     plugins : [
       'karma-phantomjs-launcher',
       'karma-jasmine',
+      'karma-mocha-reporter',
+      'karma-coverage',
+      'karma-coveralls',
       'karma-ng-html2js-preprocessor'
     ],
 
+    // coverage reporter generates the coverage
+    reporters: ['mocha', 'coverage', 'coveralls'],
+
     preprocessors: {
-      'src/**/*.html': ['ng-html2js']
+      'src/**/*.html': ['ng-html2js'],
+      'src/**/*.js': ['coverage']
+    },
+
+    // optionally, configure the reporter
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
     }
   };
 

@@ -3,8 +3,8 @@ module frontend {
 
   export class MainController {
     /** @ngInject */
-    constructor (toastr: Toastr) {
-      toastr.success('activated main controller');
+    constructor ($log: ng.ILogService) {
+      $log.debug('activated main controller');
     }
   }
 }
