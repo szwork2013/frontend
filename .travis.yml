@@ -9,6 +9,7 @@ node_js:
 cache:
   directories:
     - node_modules
+    -bower_components
 
 matrix:
   fast_finish: true
