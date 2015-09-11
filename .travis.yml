@@ -15,10 +15,6 @@ matrix:
     - node_js: iojs
 
 install:
-  # Disable the spinner, it looks bad on Travis
-  - npm install
-
-before_script:
   - npm install
   - npm install bower -g
   - bower install
