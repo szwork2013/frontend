@@ -16,13 +16,9 @@ matrix:
     - node_js: iojs
 
 install:
-  # Check the size of caches
-  - du -sh ./node_modules ./test/tmp/deps/node_modules || true
   # Disable the spinner, it looks bad on Travis
   - npm config set spin false
   - npm install -g npm@latest
-  # Instal npm dependecies and ensure that npm cache is not stale
-  - ./scripts/generator-install-dependencies.sh
 
 before_script:
   - export CHROME_BIN=chromium-browser
