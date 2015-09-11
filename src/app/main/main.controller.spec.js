@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  describe('controllers', function(){
+  describe('controllers: MainController', function(){
 
     beforeEach(module('frontend'));
 

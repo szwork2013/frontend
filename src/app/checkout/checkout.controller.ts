@@ -3,8 +3,8 @@ module frontend {
 
   export class CheckoutController {
     /** @ngInject */
-    constructor (toastr: Toastr) {
-      toastr.success('activated checkout controller');
+    constructor ($log: ng.ILogService) {
+      $log.debug('activated checkout controller');
     }
   }
 }

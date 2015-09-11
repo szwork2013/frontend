@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row" style="height: 400px;">
     <div class="col-xs-12">
-        <carousel interval="vm.myInterval" no-wrap="noWrapSlides">
+        <carousel id="carousel" interval="vm.myInterval" no-wrap="noWrapSlides">
           <slide ng-repeat="slide in vm.slides" active="slide.active">
             <img ng-src="{{::slide.image}}" style="margin:auto;">
 

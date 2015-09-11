@@ -3,8 +3,8 @@ module frontend {
 
   export class ProductDetailController {
     /** @ngInject */
-    constructor (toastr: Toastr) {
-      toastr.success('activated product detail controller');
+    constructor ($log: ng.ILogService) {
+      $log.debug('activated product detail controller');
     }
   }
 }

@@ -19,8 +19,8 @@ module frontend {
   class FooterController {
     public relativeDate: string;
 
-    constructor(toastr: Toastr) {
-      toastr.success('activated cart footer directive');
+    constructor($log: ng.ILogService) {
+      $log.debug('activated cart footer directive');
     }
   }
 }
