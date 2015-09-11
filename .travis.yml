@@ -19,8 +19,6 @@ install:
   # Disable the spinner, it looks bad on Travis
   - npm config set spin false
   - npm install -g npm@latest
-  - npm install typescript -g
-  - tsd install
 
 before_script:
   - gem install sass
