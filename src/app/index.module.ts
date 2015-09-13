@@ -31,6 +31,7 @@ module frontend {
     .constant('toastr', toastr)
     .constant('moment', moment)
     .constant('_', _)
+    .constant('apiCartURL', 'http://localhost:3002')
     .config(Config)
 
     .config(RouterConfig)

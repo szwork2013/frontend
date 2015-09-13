@@ -24,13 +24,19 @@ module frontend {
     public count: string;
     public category: string;
 
-    constructor(toastr: Toastr, dataService: DataService) {
-      this.getProducts(toastr, dataService);
+    private $log: ng.ILogService;
+    private dataService: DataService;
+
+    constructor($log: ng.ILogService, dataService: DataService) {
+      this.$log = $log;
+      this.dataService = dataService;
+
+      this.getProducts();
     }
 
-    getProducts(toastr: Toastr, dataService: DataService) {
-      console.log('called single product directive function', this);
-      return dataService.getProducts()
+    getProducts() {
+      this.$log.debug('called single product directive function');
+      return this.dataService.getProducts()
         .then((data: any) => {
           this.products = data;
           return this.products;

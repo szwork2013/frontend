@@ -6,11 +6,13 @@ module frontend {
 
     private $log: ng.ILogService;
     private $http: ng.IHttpService;
+    private apiCartURL: string
 
     /** @ngInject */
-    constructor($log: ng.ILogService, $http: ng.IHttpService) {
+    constructor($log: ng.ILogService, $http: ng.IHttpService, apiCartURL: string) {
       this.$log = $log;
       this.$http = $http;
+      this.apiCartURL = apiCartURL;
     }
 
     getProducts() {
@@ -20,6 +22,16 @@ module frontend {
         })
         .catch((error: any) => {
           this.$log.error('XHR Failed for getProducts.\n', error.data);
+        });
+    }
+
+    getSliderData() {
+      return this.$http.get(this.apiCartURL + '/slider')
+        .then((response: any) => {
+          return response.data;
+        })
+        .catch((error: any) => {
+          this.$log.error('XHR Failed for getSlider.\n', error.data);
         });
     }
   }

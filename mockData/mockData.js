@@ -670,6 +670,14 @@ module.exports = function () {
           }
         ]
       }
+    ],
+    slider: [
+      {
+        image: '../assets/images/banner_2-1920x641.jpg'
+      },
+      {
+        image: '../assets/images/banner_3-1920x641.jpg'
+      }
     ]
   };
 };

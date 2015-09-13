@@ -22,37 +22,42 @@ module frontend {
 
   /** @ngInject */
   class CarouselController {
-    private myInterval: Number;
-    private slides: ISlide[];
+    public myInterval: Number;
+    private slider: ISlide[];
 
-    constructor(toastr: Toastr) {
+    constructor($log: ng.ILogService, dataService: DataService) {
       this.myInterval = 3000;
-      this.slides = [];
+      this.slider = [];
       // call this function when controller is first loaded
-      this.activate(toastr);
+      this.activate($log, dataService);
     }
 
     /**
      * activate function called when CarouselController is loaded
      * @param {Object} toastr passed to activate function to show toastr notifications
      */
-    activate(toastr: Toastr) {
-      toastr.success('activated cart carouserl directive');
-      for (var i: number = 0; i < 4; i++) {
-        this.addSlide();
-      }
+    activate($log: ng.ILogService, dataService: DataService) {
+      $log.debug('activated cart carouserl directive');
+      this.getSliderData($log, dataService);
     }
 
     /**
-     * add slide function called on page load to activate carousel with four slides
+     * this function gets slider data
+     * @param $log
+     * @param dataService
+     * @returns {IPromise<ISlide[]>}
      */
-    addSlide() {
-      var newWidth: Number = 1200 + this.slides.length + 1;
-      this.slides.push({
-        image: '//placekitten.com/' + newWidth + '/400',
-        text: ['More', 'Extra', 'Lots of', 'Surplus'][this.slides.length % 4] + ' ' +
-        ['Cats', 'Kittys', 'Felines', 'Cutes'][this.slides.length % 4]
-      });
+    getSliderData($log: ng.ILogService , dataService: DataService) {
+      $log.debug('activated cart carouserl web service');
+      return dataService.getSliderData()
+        .then((data: any) => {
+          this.slider = data;
+          return this.slider;
+        });
+    }
+
+    showToastr() {
+      console.log('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
     }
 
   }
