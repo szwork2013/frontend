@@ -30,6 +30,7 @@ module frontend {
     constructor($log: ng.ILogService, dataService: DataService) {
       this.$log = $log;
       this.dataService = dataService;
+      this.products = [];
 
       this.getProducts();
     }

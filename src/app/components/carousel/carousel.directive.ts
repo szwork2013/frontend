@@ -23,22 +23,18 @@ module frontend {
   /** @ngInject */
   class CarouselController {
     public myInterval: Number;
+
     private slider: ISlide[];
+    private $log: ng.ILogService;
+    private dataService: DataService;
 
     constructor($log: ng.ILogService, dataService: DataService) {
       this.myInterval = 3000;
       this.slider = [];
+      this.$log = $log;
+      this.dataService = dataService;
       // call this function when controller is first loaded
-      this.activate($log, dataService);
-    }
-
-    /**
-     * activate function called when CarouselController is loaded
-     * @param {Object} toastr passed to activate function to show toastr notifications
-     */
-    activate($log: ng.ILogService, dataService: DataService) {
-      $log.debug('activated cart carouserl directive');
-      this.getSliderData($log, dataService);
+      this.getSliderData();
     }
 
     /**
@@ -47,17 +43,13 @@ module frontend {
      * @param dataService
      * @returns {IPromise<ISlide[]>}
      */
-    getSliderData($log: ng.ILogService , dataService: DataService) {
-      $log.debug('activated cart carouserl web service');
-      return dataService.getSliderData()
+    getSliderData() {
+      this.$log.debug('activated cart carouserl web service');
+      return this.dataService.getSliderData()
         .then((data: any) => {
           this.slider = data;
           return this.slider;
         });
-    }
-
-    showToastr() {
-      console.log('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
     }
 
   }
