@@ -14,6 +14,11 @@
       URL = apiCartURL;
     }));
 
+    afterEach(function() {
+      $httpBackend.verifyNoOutstandingExpectation();
+      $httpBackend.verifyNoOutstandingRequest();
+    });
+
     function createDirective() {
       element = angular.element('<cart-carousel></cart-carousel>');
       $compile(element)($scope);

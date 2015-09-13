@@ -14,6 +14,11 @@
       URL = apiCartURL;
     }));
 
+    afterEach(function() {
+      $httpBackend.verifyNoOutstandingExpectation();
+      $httpBackend.verifyNoOutstandingRequest();
+    });
+
     function createDirective(countValue, categoryValue) {
       var countValue = countValue || 4;
       var categoryValue = categoryValue || 'Electronics';
