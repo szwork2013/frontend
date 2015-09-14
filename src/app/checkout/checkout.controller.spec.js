@@ -9,5 +9,6 @@
       var vm = $controller('CheckoutController');
       expect($log.debug.logs).toContain(['activated checkout controller']);
     }));
+
   });
 })();

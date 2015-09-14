@@ -159,7 +159,7 @@
         expect(data.isArray);
         expect(data.length).toBe(1);
       });
-      $httpBackend.flush();
+      expect($httpBackend.flush).not.toThrow();
 
     }));
 
@@ -178,7 +178,7 @@
         expect(data.isArray);
         expect(data.length).toBe(2);
       });
-      $httpBackend.flush();
+      expect($httpBackend.flush).not.toThrow();
 
     }));
 
