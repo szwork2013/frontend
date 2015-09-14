@@ -18,29 +18,32 @@ module frontend {
 
   }
 
+  export interface ISingleProductController {
+    getProductData(): void;
+  }
+
   /** @ngInject */
-  class SingleProductController {
+  class SingleProductController implements ISingleProductController{
     public products: any[];
     public count: string;
     public category: string;
 
     private $log: ng.ILogService;
-    private dataService: DataService;
+    private productService: ProductService;
 
-    constructor($log: ng.ILogService, dataService: DataService) {
+    constructor($log: ng.ILogService, productService: ProductService) {
       this.$log = $log;
-      this.dataService = dataService;
+      this.productService = productService;
       this.products = [];
 
-      this.getProducts();
+      this.getProductData();
     }
 
-    getProducts() {
+    getProductData() {
       this.$log.debug('called single product directive function');
-      return this.dataService.getProducts()
-        .then((data: any) => {
-          this.products = data;
-          return this.products;
+      return this.productService.getProductData()
+        .then((product: any): void => {
+          this.products = product;
         });
     }
   }

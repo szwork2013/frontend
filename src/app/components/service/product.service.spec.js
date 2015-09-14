@@ -1,16 +1,16 @@
 (function () {
   'use strict';
 
-  describe('service: dataService', function () {
-    var element, $scope, $controller, $compile, $httpBackend, URL, dataService;
+  describe('service: productService', function () {
+    var element, $scope, $controller, $compile, $httpBackend, URL, productService;
 
     beforeEach(module('frontend'));
 
-    beforeEach(inject(function (_$rootScope_, _$httpBackend_, _$controller_, _dataService_, apiCartURL) {
+    beforeEach(inject(function (_$rootScope_, _$httpBackend_, _$controller_, _productService_, apiCartURL) {
       $scope = _$rootScope_.$new();
       $httpBackend = _$httpBackend_;
       URL = apiCartURL;
-      dataService = _dataService_;
+      productService = _productService_;
     }));
 
     afterEach(function () {
@@ -19,7 +19,7 @@
     });
 
     it('should initialise get product service and check that correct data is returned', inject(function () {
-      expect(angular.isFunction(dataService.getProducts)).toBeDefined;
+      expect(angular.isFunction(productService.getProductData)).toBeDefined;
       $httpBackend.whenGET(URL + '/products').respond([
         {
           "id": 6,
@@ -155,28 +155,9 @@
         }
       ]);
 
-      dataService.getProducts().then(function (data){
+      productService.getProductData().then(function (data){
         expect(data.isArray);
         expect(data.length).toBe(1);
-      });
-      expect($httpBackend.flush).not.toThrow();
-
-    }));
-
-    it('should initialise get slider service and check that correct data is returned', inject(function () {
-      expect(angular.isFunction(dataService.getSliderData)).toBeDefined;
-      $httpBackend.whenGET(URL + '/slider').respond([
-        {
-          image: '../assets/images/banner_2-1920x641.jpg'
-        },
-        {
-          image: '../assets/images/banner_3-1920x641.jpg'
-        }
-      ]);
-
-      dataService.getSliderData().then(function (data){
-        expect(data.isArray);
-        expect(data.length).toBe(2);
       });
       expect($httpBackend.flush).not.toThrow();
 

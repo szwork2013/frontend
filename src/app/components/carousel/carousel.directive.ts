@@ -1,11 +1,6 @@
 module frontend {
   'use strict';
 
-  export interface ISlide {
-    image: string;
-    text: string;
-  }
-
   /** @ngInject */
   export function cartCarousel(): ng.IDirective {
 
@@ -20,35 +15,35 @@ module frontend {
 
   }
 
+  export interface ICarouselController {
+    getSliderData(): void;
+  }
+
   /** @ngInject */
-  class CarouselController {
-    public myInterval: Number;
-
-    private slider: ISlide[];
+  class CarouselController implements ICarouselController{
+    private myInterval: Number;
+    private slider: ICarousel;
     private $log: ng.ILogService;
-    private dataService: DataService;
+    private carouselService: CarouselService;
 
-    constructor($log: ng.ILogService, dataService: DataService) {
+    constructor($log: ng.ILogService, carouselService: CarouselService) {
       this.myInterval = 3000;
-      this.slider = [];
       this.$log = $log;
-      this.dataService = dataService;
+      this.carouselService = carouselService;
       // call this function when controller is first loaded
       this.getSliderData();
     }
 
     /**
      * this function gets slider data
-     * @param $log
-     * @param dataService
-     * @returns {IPromise<ISlide[]>}
+     * @param carouselService
+     * @returns {IPromise<ICarousel>}
      */
     getSliderData() {
       this.$log.debug('activated cart carouserl web service');
-      return this.dataService.getSliderData()
-        .then((data: any) => {
-          this.slider = data;
-          return this.slider;
+      return this.carouselService.getCarouselData()
+        .then((carousel: ICarousel): void => {
+          this.slider = carousel;
         });
     }
 

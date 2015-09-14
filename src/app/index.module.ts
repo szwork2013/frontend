@@ -16,7 +16,8 @@
 /// <reference path="../app/components/malarkey/malarkey.directive.ts" />
 /// <reference path="../app/components/webDevTec/webDevTec.service.ts" />
 /// <reference path="../app/components/githubContributor/githubContributor.service.ts" />
-/// <reference path="../app/components/service/data.service.ts" />
+/// <reference path="../app/components/service/carousel.service.ts" />
+/// <reference path="../app/components/service/product.service.ts" />
 
 declare var malarkey: any;
 declare var toastr: Toastr;
@@ -39,7 +40,8 @@ module frontend {
     .run(RunBlock)
     .service('githubContributor', GithubContributor)
     .service('webDevTec', WebDevTecService)
-    .service('dataService', DataService)
+    .service('carouselService', CarouselService)
+    .service('productService', ProductService)
     .controller('MainController', MainController)
     .controller('ProductDetailController', ProductDetailController)
     .controller('CheckoutController', CheckoutController)

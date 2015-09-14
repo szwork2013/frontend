@@ -39,7 +39,6 @@
       createDirective();
       // check that directive controller has been activated
       expect($log.debug.logs).toContain(['activated cart carouserl web service']);
-      expect(element.isolateScope().vm.slider.length).toBe(0);
       $httpBackend.flush();
       var items = element.find('#carousel');
       expect(items.length).toBe(1);
