@@ -6,7 +6,7 @@ module frontend {
 
     private $log: ng.ILogService;
     private $http: ng.IHttpService;
-    private apiCartURL: string
+    private apiCartURL: string;
 
     /** @ngInject */
     constructor($log: ng.ILogService, $http: ng.IHttpService, apiCartURL: string) {
@@ -16,7 +16,7 @@ module frontend {
     }
 
     getProducts() {
-      return this.$http.get(this.apiCart + '/products')
+      return this.$http.get(this.apiCartURL + '/products')
         .then((response: any) => {
           return response.data;
         })
