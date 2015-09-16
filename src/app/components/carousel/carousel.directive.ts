@@ -16,15 +16,19 @@ module frontend {
   }
 
   export interface ICarouselController {
+    myInterval: number;
+    slider: ICarousel;
+    carouselService: CarouselService;
+
     getSliderData(): void;
   }
 
   /** @ngInject */
   class CarouselController implements ICarouselController{
-    private myInterval: Number;
-    private slider: ICarousel;
-    private $log: ng.ILogService;
-    private carouselService: CarouselService;
+    myInterval: number;
+    slider: ICarousel;
+    $log: ng.ILogService;
+    carouselService: CarouselService;
 
     constructor($log: ng.ILogService, carouselService: CarouselService) {
       this.myInterval = 3000;
