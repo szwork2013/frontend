@@ -10,6 +10,8 @@
 /// <reference path="checkout/checkout.controller.ts" />
 /// <reference path="cart/cart.controller.ts" />
 /// <reference path="../app/components/carousel/carousel.directive.ts" />
+/// <reference path="../app/components/category/category.directive.ts" />
+/// <reference path="../app/components/categoryToggle/categoryToggle.directive.ts" />
 /// <reference path="../app/components/navbar/navbar.directive.ts" />
 /// <reference path="../app/components/footer/footer.directive.ts" />
 /// <reference path="../app/components/singleProduct/singleProduct.directive.ts" />
@@ -18,6 +20,7 @@
 /// <reference path="../app/components/githubContributor/githubContributor.service.ts" />
 /// <reference path="../app/components/service/carousel.service.ts" />
 /// <reference path="../app/components/service/product.service.ts" />
+/// <reference path="../app/components/service/category.service.ts" />
 
 declare var malarkey: any;
 declare var toastr: Toastr;
@@ -42,6 +45,7 @@ module frontend {
     .service('webDevTec', WebDevTecService)
     .service('carouselService', CarouselService)
     .service('productService', ProductService)
+    .service('categoryService', CategoryService)
     .controller('MainController', MainController)
     .controller('ProductDetailController', ProductDetailController)
     .controller('CheckoutController', CheckoutController)
@@ -49,6 +53,8 @@ module frontend {
     .directive('cartNavbar', cartNavbar)
     .directive('cartFooter', cartFooter)
     .directive('cartCarousel', cartCarousel)
+    .directive('cartCategory', cartCategory)
     .directive('cartSingleProduct', cartSingleProduct)
+    .directive('cartCategoryToggle', cartCategoryToggle)
     .directive('acmeMalarkey', acmeMalarkey);
 }

@@ -678,6 +678,51 @@ module.exports = function () {
       {
         image: '../assets/images/banner_3-1920x641.jpg'
       }
+    ],
+    categories: [
+      {
+        'text': 'ELECTRONICS',
+        'link': '/cart',
+        'subMenu': [
+          {
+            'text': '1',
+            'link': 'link'
+          },
+          {
+            'text': '2',
+            'link': 'link'
+          }
+        ]
+      },
+      {
+        'text': 'HOME',
+        'link': '/cart',
+        'subMenu': []
+      },
+      {
+        'text': 'KITCHEN',
+        'link': '/cart',
+        'subMenu': []
+      },
+      {
+        'text': 'MEN',
+        'link': '/cart',
+        'subMenu': []
+      },
+      {
+        'text': 'WOMEN',
+        'link': '/cart',
+        'subMenu': [
+          {
+            'text': '3',
+            'link': 'link'
+          },
+          {
+            'text': '4',
+            'link': 'link'
+          }
+        ]
+      }
     ]
   };
 };
