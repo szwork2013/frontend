@@ -79,18 +79,19 @@
         <!--product-details-->
         <div class="col-sm-5">
           <div class="view-product">
-            <img src="../assets/../assets/images/1.jpg" alt="">
-            <h3>ZOOM</h3>
+            <img ng-src="{{::vm.detail.images[0].url.http}}" alt="product image">
+            <!-- todo : enable zoom button click functionality -->
+            <!--<h3>ZOOM</h3>-->
           </div>
         </div>
         <div class="col-sm-7">
           <div class="product-information"><!--/product-information-->
-            <img src="../assets/../assets/images/new.jpg" class="newarrival" alt="">
-            <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-            <p>Web ID: 1089772</p>
-            <img src="../assets/../assets/images/rating.png" alt="">
+            <img src="../assets/images/new.jpg" class="newarrival" alt="">
+            <h2>{{::vm.detail.title}}</h2>
+            <p>Web ID: {{::vm.detail.sku}}</p>
+            <img ng-src="../assets/images/rating.png" alt="">
 								<span>
-									<span>US $59</span>
+									<span>{{::vm.detail.pricing.formatted.with_tax}}</span>
 									<label>Quantity:</label>
 									<input type="text" value="3">
 									<button type="button" class="btn btn-default btn-xs cart">
@@ -98,9 +99,9 @@
                     Add to cart
                   </button>
 								</span>
-            <p><b>Availability:</b> In Stock</p>
+            <p><b>Availability:</b> {{::vm.detail.stock_status.value}} </p>
             <p><b>Condition:</b> New</p>
-            <p><b>Brand:</b> E-SHOPPER</p>
+            <p><b>Brand:</b> {{::vm.detail.brand || 'Not Branded'}} </p>
             <a href=""><img src="../assets/../assets/images/share.png" class="share img-responsive" alt=""></a>
           </div><!--/product-information-->
         </div>
@@ -109,11 +110,12 @@
         <tab heading="Detail">
           <div class="tab-pane fade active in" id="detail">
             <div class="col-xs-12">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              <p>{{::vm.detail.description}}</p>
             </div>
           </div>
         </tab>
-        <tab heading="Reviews (5)">
+        <!-- todo : implement fetch reviw lazy loading functionality -->
+        <tab heading="Reviews (5)" select="vm.fetchReviews()">
           <div class="tab-pane fade active in" id="reviews">
             <div class="col-sm-12">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>

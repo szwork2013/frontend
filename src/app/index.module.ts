@@ -1,8 +1,6 @@
 /// <reference path="../../.tmp/typings/tsd.d.ts" />
 
-
 /// <reference path="index.route.ts" />
-
 /// <reference path="index.config.ts" />
 /// <reference path="index.run.ts" />
 /// <reference path="main/main.controller.ts" />
@@ -11,7 +9,6 @@
 /// <reference path="cart/cart.controller.ts" />
 /// <reference path="../app/components/carousel/carousel.directive.ts" />
 /// <reference path="../app/components/category/category.directive.ts" />
-/// <reference path="../app/components/categoryToggle/categoryToggle.directive.ts" />
 /// <reference path="../app/components/navbar/navbar.directive.ts" />
 /// <reference path="../app/components/footer/footer.directive.ts" />
 /// <reference path="../app/components/singleProduct/singleProduct.directive.ts" />
@@ -55,6 +52,5 @@ module frontend {
     .directive('cartCarousel', cartCarousel)
     .directive('cartCategory', cartCategory)
     .directive('cartSingleProduct', cartSingleProduct)
-    .directive('cartCategoryToggle', cartCategoryToggle)
     .directive('acmeMalarkey', acmeMalarkey);
 }

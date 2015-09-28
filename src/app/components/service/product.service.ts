@@ -1,8 +1,10 @@
 module frontend {
   'use strict';
 
+  // todo : declare a product interface for the product data type and change the any
   export interface IProductService {
     getProductData(): ng.IPromise<any>;
+    getProductByID(id: string): ng.IPromise<any>;
   }
 
   export class ProductService implements IProductService {
@@ -16,6 +18,13 @@ module frontend {
 
     getProductData(): ng.IPromise<any> {
       return this.$http.get(this.apiCartURL + '/products')
+        .then((response: ng.IHttpPromiseCallbackArg<any>): any => {
+          return response.data;
+        });
+    }
+
+    getProductByID(id: string): ng.IPromise<any> {
+      return this.$http.get(this.apiCartURL + '/products?sku=' + id)
         .then((response: ng.IHttpPromiseCallbackArg<any>): any => {
           return response.data;
         });
